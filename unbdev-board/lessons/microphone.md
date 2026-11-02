@@ -171,5 +171,5 @@ If nothing responds, check that you selected **UNBdev.board / Microphone**, that
 Click **Done** to retain your project. The instructor coverage and validation checklist is maintained alongside this lesson in the UNBDev Board Guide repository.
 
 ```package
-unbdev-board=github:UNB-ECE/pxt-unbdev-board#23216a044cd70836a97f731f09d3ab932d4edbeb
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#22ed7d76838be66d456de13efc1604b1037dbefe
 ```
