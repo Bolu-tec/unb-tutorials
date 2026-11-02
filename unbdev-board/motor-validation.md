@@ -1,7 +1,7 @@
 # Motor preview coverage and physical readiness
 
 Lesson: [Control UNBdev.board motors](lessons/motor-control.md). The lesson uses
-extension revision `9c599beeb48972ae5d9f8108f9af66b320add00b`, which contains the
+extension revision `22ed7d76838be66d456de13efc1604b1037dbefe`, which contains the
 motor API. This identifies the software reviewed; it is not evidence of physical
 board or firmware compatibility. The lesson remains an instructor preview.
 
