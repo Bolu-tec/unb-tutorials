@@ -2,6 +2,19 @@
 
 Reusable instructor-preview activities for the integrated UNBdev.board.
 
+## Wi-Fi and MQTT instructor preview
+
+[Send messages with Wi-Fi and MQTT](lessons/wifi-mqtt.md) covers all nine public
+Wi-Fi/MQTT blocks and both text/number receive modes at the collection's pinned
+extension revision `22ed7d76838be66d456de13efc1604b1037dbefe` (v0.3.0).
+It requires an instructor-approved lab network and anonymous unencrypted MQTT
+broker on TCP 1883. Real credentials must never be committed or shared.
+The [coverage and validation record](wifi-mqtt-validation.md) includes setup,
+independent broker observations, recovery tests and a per-run evidence form.
+Editor completion and physical validation remain pending under
+[unb-platform #143](https://github.com/UNB-ECE/unb-platform/issues/143);
+the card remains **Hardware unverified**.
+
 - Publication reviewer: the UNB-ECE repository maintainer. Physical/student-readiness review remains required under [#140](https://github.com/UNB-ECE/unb-platform/issues/140).
 - [BLiXel lesson](lessons/blixel.md) and [card image](static/blixel.svg) were copied without content changes from UNB-ECE/pxt-microbit revision `94b7bfe64ae6348f477f42d0a52ab97e8ea77a3b`, paths `docs/projects/unbdev-board/blixel.md` and `docs/static/tutorials/unbdev-blixel.svg`.
 - [Motor control preview](lessons/motor-control.md) introduces the implemented motor API for code review. Physical motor operation is not validated or authorized by the lesson; see the [motor validation checklist](motor-validation.md).
