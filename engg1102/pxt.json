@@ -13,6 +13,7 @@
         "main.ts",
         "lessons/getting-started.md",
         "lessons/micro-led.md",
+        "lessons/rock-paper-scissors.md",
         "lessons/main.blocks"
     ],
     "testFiles": [

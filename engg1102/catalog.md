@@ -23,6 +23,15 @@ Introductory editor practice. Course-specific learning objectives and assessment
     "imageUrl": "/unb-tutorials/engg1102/static/getting-started.svg",
     "label": "Instructor preview",
     "labelClass": "orange ribbon"
+  },
+  {
+    "name": "Rock Paper Scissors",
+    "description": "Count 1-2-3 on the BLiXels and randomly show rock, paper, or scissors.",
+    "url": "/unb-tutorials/engg1102/lessons/rock-paper-scissors",
+    "cardType": "tutorial",
+    "imageUrl": "/unb-tutorials/engg1102/static/getting-started.svg",
+    "label": "Instructor preview",
+    "labelClass": "orange ribbon"
   }
 ]
 ```
