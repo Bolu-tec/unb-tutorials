@@ -140,5 +140,5 @@ music.playMelody("C D E F G A B C5 ", 120)
 🎉 Well done! You built a device with an **input** (button A) and three **outputs**: sound, lights, and the screen. It gives **instant feedback**, uses a **loop** to flash, and always returns to a known **normal state**.
 
 ```package
-unbdev-board=github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#22ed7d76838be66d456de13efc1604b1037dbefe
 ```

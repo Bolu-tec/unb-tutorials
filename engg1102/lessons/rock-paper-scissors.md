@@ -305,5 +305,5 @@ music.playMelody("C D E F G A B C5 ", 120)
 **Challenge:** Play against a friend: each of you presses button A, and the best hand wins. Or use a different colour for each count of the countdown!
 
 ```package
-unbdev-board=github:UNB-ECE/pxt-unbdev-board#9c599beeb48972ae5d9f8108f9af66b320add00b
+unbdev-board=github:UNB-ECE/pxt-unbdev-board#22ed7d76838be66d456de13efc1604b1037dbefe
 ```
