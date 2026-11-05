@@ -128,7 +128,7 @@ Instead of always picking 0, let the board pick a **random** number.
 Now **choice** will be **0**, **1**, or **2**, picked by chance each time. Each number stands for one hand:
 
 | Number | Hand |
-|---|---|
+|:---|:---|
 | 0 | Rock |
 | 1 | Paper |
 | 2 | Scissors |
@@ -278,6 +278,25 @@ Your game is finished! Time to test it.
 - **No lights?** The simulator doesn't show BLiXels, so test on the real board.
 - **Always the same icon?** Make sure **pick random** goes from **0** to **2**.
 - **Nothing happens?** Make sure every block is **inside** **on button A pressed**.
+
+## Step 12: Make One Change
+
+Now that your game works, make **one change** to the system.
+
+Choose one:
+
+- Use **shaking** as the input instead of Button A. *Hint: look in the ``||input:Input||`` drawer.*
+- Add a **sound** during the countdown or when the result is shown. *Hint: look in the ``||music:Music||`` drawer.*
+- Give **Button B** a different behaviour. *Hint: check the dropdown on a block you've already used.*
+
+Test your change on the UNB Development Board.
+
+```ghost
+input.onGesture(Gesture.Shake, function () {
+})
+music.playTone(Note.C, music.beat(BeatFraction.Half))
+music.playMelody("C D E F G A B C5 ", 120)
+```
 
 ## Completion
 

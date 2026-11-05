@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+<title id="title">Debug Challenge</title><desc id="desc">A magnifying glass over a bug on a code block, beside the words Observe, Compare, Fix.</desc>
+<rect width="640" height="360" rx="20" fill="#eaf1f7"/>
+<rect x="50" y="90" width="230" height="40" rx="8" fill="#1e90ff"/><rect x="70" y="140" width="200" height="40" rx="8" fill="#00a4a6"/><rect x="70" y="190" width="160" height="40" rx="8" fill="#ef4160"/>
+<ellipse cx="150" cy="210" rx="16" ry="20" fill="#16344b"/><path d="M134 200 L120 192 M134 214 L118 214 M134 226 L120 234 M166 200 L180 192 M166 214 L182 214 M166 226 L180 234" stroke="#16344b" stroke-width="4" stroke-linecap="round"/>
+<circle cx="190" cy="200" r="62" fill="none" stroke="#16344b" stroke-width="12"/><path d="M234 244 L285 295" stroke="#16344b" stroke-width="18" stroke-linecap="round"/>
+<text x="345" y="125" font-family="sans-serif" font-size="32" fill="#16344b">Part C</text><text x="345" y="175" font-family="sans-serif" font-size="26" fill="#16344b">Observe</text><text x="345" y="215" font-family="sans-serif" font-size="26" fill="#16344b">Compare</text><text x="345" y="255" font-family="sans-serif" font-size="26" fill="#16344b">Fix</text>
+</svg>

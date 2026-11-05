@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+<title id="title">Pedestrian Traffic Light</title><desc id="desc">A traffic light with red, yellow and green lamps beside a walking figure and the words Press, Wait, Cross.</desc>
+<rect width="640" height="360" rx="20" fill="#eaf1f7"/>
+<rect x="80" y="50" width="120" height="260" rx="24" fill="#16344b"/>
+<circle cx="140" cy="110" r="32" fill="#ef4160"/><circle cx="140" cy="180" r="32" fill="#f5c542"/><circle cx="140" cy="250" r="32" fill="#3fbf6f"/>
+<circle cx="265" cy="120" r="14" fill="#16344b"/><path d="M265 136 V200 M265 150 L240 180 M265 150 L290 175 M265 200 L245 245 M265 200 L285 245" stroke="#16344b" stroke-width="10" stroke-linecap="round" fill="none"/>
+<text x="345" y="125" font-family="sans-serif" font-size="32" fill="#16344b">Option 1</text><text x="345" y="175" font-family="sans-serif" font-size="26" fill="#16344b">Press</text><text x="345" y="215" font-family="sans-serif" font-size="26" fill="#16344b">Wait</text><text x="345" y="255" font-family="sans-serif" font-size="26" fill="#16344b">Cross</text>
+</svg>
