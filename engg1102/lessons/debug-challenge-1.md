@@ -75,7 +75,7 @@ Show your corrected program to your instructor or TA. Be ready to briefly explai
 let ledOn = false
 let presses = 0
 UNBdevBLiXel.setBrightness(20)
-UNBdevBLiXel.clear()
+UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
 input.onButtonPressed(Button.A, function () {
     if (presses <= 4) {
         presses += 1
@@ -83,7 +83,7 @@ input.onButtonPressed(Button.A, function () {
         if (ledOn) {
             UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
         } else {
-            UNBdevBLiXel.clear()
+            UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
         }
     }
 })

@@ -40,14 +40,14 @@ Before the countdown, the lights should start **off** and at a **safe brightness
 Open **UNBdev.board → BLiXel** and drag these two blocks **inside** **on button A pressed**:
 
 1. **set UNBdev.board BLiXel brightness to 20%**
-2. **clear all UNBdev.board BLiXels**
+2. **set all UNBdev.board BLiXels to** **black**
 
-**Why?** 20% is bright enough to see and is the safe level for this activity. Clearing turns off any lights left over from the last round.
+**Why?** 20% is bright enough to see and is the safe level for this activity. **Black** means off, so this turns off any lights left over from the last round. To set the colour, drop the named colour block onto the circle and choose **black**.
 
 ```blocks
 input.onButtonPressed(Button.A, function () {
     UNBdevBLiXel.setBrightness(20)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
 })
 ```
 
@@ -55,7 +55,7 @@ input.onButtonPressed(Button.A, function () {
 
 Now light up the first BLiXel to count **1**.
 
-1. From **UNBdev.board → BLiXel**, drag **set UNBdev.board BLiXel 1 to** and place it under **clear all UNBdev.board BLiXels**. Leave the dropdown on **1**.
+1. From **UNBdev.board → BLiXel**, drag **set UNBdev.board BLiXel 1 to** and place it under **set all UNBdev.board BLiXels to** **black**. Leave the dropdown on **1**.
 2. The block has a **red circle** at the end: that's where its colour goes. From the same drawer, drag the named colour block and drop it **onto the red circle**, then choose **blue** in its dropdown.
 3. From ``||basic:Basic||``, add ``||basic:pause (ms) 500||`` underneath.
 
@@ -64,7 +64,7 @@ Now light up the first BLiXel to count **1**.
 ```blocks
 input.onButtonPressed(Button.A, function () {
     UNBdevBLiXel.setBrightness(20)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
     basic.pause(500)
 })
@@ -84,7 +84,7 @@ Repeat Step 3 two more times so the board counts **1–2–3**.
 ```blocks
 input.onButtonPressed(Button.A, function () {
     UNBdevBLiXel.setBrightness(20)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
     basic.pause(500)
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Two, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
@@ -106,7 +106,7 @@ The board needs somewhere to **remember** what it picked. In coding, that "somew
 let choice = 0
 input.onButtonPressed(Button.A, function () {
     UNBdevBLiXel.setBrightness(20)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
     basic.pause(500)
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Two, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
@@ -137,7 +137,7 @@ Now **choice** will be **0**, **1**, or **2**, picked by chance each time. Each 
 let choice = 0
 input.onButtonPressed(Button.A, function () {
     UNBdevBLiXel.setBrightness(20)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
     basic.pause(500)
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Two, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
@@ -161,7 +161,7 @@ Now the board needs to **decide** what to show. An **if** block runs its code on
 let choice = 0
 input.onButtonPressed(Button.A, function () {
     UNBdevBLiXel.setBrightness(20)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
     basic.pause(500)
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Two, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
@@ -189,7 +189,7 @@ Next, add a second check for Paper.
 let choice = 0
 input.onButtonPressed(Button.A, function () {
     UNBdevBLiXel.setBrightness(20)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
     basic.pause(500)
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Two, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
@@ -217,7 +217,7 @@ Put ``||basic:show icon||`` inside the **else** part and choose the **scissors**
 let choice = 0
 input.onButtonPressed(Button.A, function () {
     UNBdevBLiXel.setBrightness(20)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
     basic.pause(500)
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Two, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
@@ -239,13 +239,13 @@ input.onButtonPressed(Button.A, function () {
 
 Finally, turn off the countdown lights so the board is ready for the next round.
 
-From **UNBdev.board → BLiXel**, drag **clear all UNBdev.board BLiXels** to the very **bottom** of **on button A pressed**, **below** the whole if block (not inside it).
+From **UNBdev.board → BLiXel**, drag **set all UNBdev.board BLiXels to** **black** to the very **bottom** of **on button A pressed**, **below** the whole if block (not inside it).
 
 ```blocks
 let choice = 0
 input.onButtonPressed(Button.A, function () {
     UNBdevBLiXel.setBrightness(20)
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
     basic.pause(500)
     UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.Two, UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
@@ -260,7 +260,7 @@ input.onButtonPressed(Button.A, function () {
     } else {
         basic.showIcon(IconNames.Scissors)
     }
-    UNBdevBLiXel.clear()
+    UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
 })
 ```
 

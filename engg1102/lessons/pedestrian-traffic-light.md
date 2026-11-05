@@ -32,15 +32,15 @@ Traffic lights should be easy to see but not blinding.
 From **UNBdev.board → BLiXel**, drag these two blocks into ``||basic:on start||``:
 
 1. **set UNBdev.board BLiXel brightness to 20%**
-2. **clear all UNBdev.board BLiXels**
+2. **set all UNBdev.board BLiXels to** **black**
 
-**Why?** **on start** runs once, when the board powers on. Clearing turns off any lights left on from an earlier program.
+**Why?** **on start** runs once, when the board powers on. **Black** means off, so this turns off any lights left on from an earlier program. To set the colour, drop the named colour block onto the circle and choose **black**.
 
 ## Step 2: The normal state
 
 Normally, cars have a **green** light and people see **don't walk**.
 
-1. From **UNBdev.board → BLiXel**, add **set UNBdev.board BLiXel 1 to** under the clear block. Change the dropdown to **5**.
+1. From **UNBdev.board → BLiXel**, add **set UNBdev.board BLiXel 1 to** under the **black** block. Change the dropdown to **5**.
 2. Drop the named colour block onto its **red circle** and choose **green**.
 3. From ``||basic:Basic||``, add ``||basic:show icon||`` and choose the **X**. That's our "don't walk" sign.
 
@@ -58,7 +58,7 @@ Everything that happens after the button press goes inside this block.
 
 Cars need a warning before the light turns red. Inside **on button A pressed**, add:
 
-1. **clear all UNBdev.board BLiXels**, to turn the green light off.
+1. **set all UNBdev.board BLiXels to** **black**, to turn the green light off.
 2. **set UNBdev.board BLiXel 3 to** **yellow**.
 3. ``||basic:pause (ms) 2000||`` from ``||basic:Basic||``.
 
@@ -68,7 +68,7 @@ Cars need a warning before the light turns red. Inside **on button A pressed**, 
 
 Now the cars stop and the pedestrian can cross. Under the pause, add:
 
-1. **clear all UNBdev.board BLiXels**
+1. **set all UNBdev.board BLiXels to** **black**
 2. **set UNBdev.board BLiXel 1 to** **red**
 3. ``||basic:show icon||`` with the **stick figure**. That's our "walk" sign.
 4. ``||basic:pause (ms) 5000||``, so people have 5 seconds to cross.
@@ -92,7 +92,7 @@ After the crossing, the light must go back to its **normal state** by itself.
 
 At the very bottom of **on button A pressed**, **below** the repeat loop (not inside it), add the same three blocks that set up the normal state in Step 2:
 
-1. **clear all UNBdev.board BLiXels**
+1. **set all UNBdev.board BLiXels to** **black**
 2. **set UNBdev.board BLiXel 5 to** **green**
 3. ``||basic:show icon||`` with the **X**
 
@@ -113,7 +113,7 @@ Your traffic light is finished! Time to test it.
 **Not working?**
 - **Button does nothing?** Press the **other** button: the A and B labels on the board are swapped.
 - **No colour lights?** The simulator doesn't show BLiXels, so test on the real board.
-- **Two lights on at once?** Make sure there's a **clear all UNBdev.board BLiXels** before each new colour.
+- **Two lights on at once?** Make sure there's a **set all UNBdev.board BLiXels to** **black** before each new colour.
 - **Doesn't go back to green?** The last three blocks must be **below** the repeat loop, not inside it.
 
 ## Step 9: Make One Change
@@ -130,7 +130,7 @@ Test your change on the UNB Development Board.
 
 ```ghost
 UNBdevBLiXel.setBrightness(20)
-UNBdevBLiXel.clear()
+UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
 UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Red))
 input.onButtonPressed(Button.A, function () {
 })

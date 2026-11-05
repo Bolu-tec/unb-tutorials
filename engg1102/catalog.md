@@ -70,8 +70,8 @@ Introductory editor practice. Course-specific learning objectives and assessment
     "labelClass": "blue ribbon"
   },
   {
-    "name": "Debug Challenge 2: Tap or Hold",
-    "description": "Find and fix the fault: a quick tap of B blinks the LED, a long hold keeps it on until released.",
+    "name": "Debug Challenge 2: A Then B",
+    "description": "Find and fix the fault: the LED turns on only when B follows A within two seconds.",
     "url": "/unb-tutorials/engg1102/lessons/debug-challenge-2",
     "cardType": "tutorial",
     "imageUrl": "/unb-tutorials/engg1102/static/debug-challenge.svg",
@@ -79,8 +79,8 @@ Introductory editor practice. Course-specific learning objectives and assessment
     "labelClass": "blue ribbon"
   },
   {
-    "name": "Debug Challenge 3: A Then B",
-    "description": "Find and fix the fault: the LED turns on only when B follows A within two seconds.",
+    "name": "Debug Challenge 3: Tap or Hold",
+    "description": "Find and fix the fault: a quick tap of B blinks the LED, a long hold keeps it on until released.",
     "url": "/unb-tutorials/engg1102/lessons/debug-challenge-3",
     "cardType": "tutorial",
     "imageUrl": "/unb-tutorials/engg1102/static/debug-challenge.svg",

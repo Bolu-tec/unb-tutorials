@@ -29,8 +29,10 @@ When a visitor presses the bell, your device will:
 
 While nobody is at the door, the doorbell should be quiet and dark, with one small sign that it's switched on.
 
-1. From **UNBdev.board → BLiXel**, drag **set UNBdev.board BLiXel brightness to 20%** and **clear all UNBdev.board BLiXels** into ``||basic:on start||``.
+1. From **UNBdev.board → BLiXel**, drag **set UNBdev.board BLiXel brightness to 20%** and **set all UNBdev.board BLiXels to** **black** into ``||basic:on start||``.
 2. From ``||basic:Basic||``, add ``||basic:show icon||`` and choose the **small diamond**. That's our "ready" sign.
+
+**Black** means off. To set the colour, drop the named colour block onto the circle and choose **black**.
 
 ## Step 2: Add the doorbell button
 
@@ -66,7 +68,7 @@ A flashing light gets attention even if the sound is missed. Let's flash the BLi
 
 1. From ``||loops:Loops||``, drag ``||loops:repeat 4 times||`` under the second tone. Change **4** to **3**.
 2. Inside the repeat, add:
-   - **clear all UNBdev.board BLiXels**
+   - **set all UNBdev.board BLiXels to** **black**
    - ``||basic:pause (ms) 200||``
    - **set all UNBdev.board BLiXels to** **blue**
    - ``||basic:pause (ms) 200||``
@@ -77,7 +79,7 @@ After the alert, the doorbell must go back to its **normal state** so it's ready
 
 At the very bottom of **on button A pressed**, **below** the repeat loop (not inside it), add:
 
-1. **clear all UNBdev.board BLiXels**
+1. **set all UNBdev.board BLiXels to** **black**
 2. ``||basic:show icon||`` with the **small diamond**
 
 These are the same blocks you used for the normal state in Step 1.
@@ -115,7 +117,7 @@ Test your change on the UNB Development Board.
 ```ghost
 let visitors = 0
 UNBdevBLiXel.setBrightness(20)
-UNBdevBLiXel.clear()
+UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Black))
 UNBdevBLiXel.setAll(UNBdevBLiXel.colour(UNBdevBLiXelColour.Blue))
 UNBdevBLiXel.setPixel(UNBdevBLiXelIndex.One, UNBdevBLiXel.colour(UNBdevBLiXelColour.Red))
 input.onButtonPressed(Button.A, function () {
