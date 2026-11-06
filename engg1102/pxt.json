@@ -14,6 +14,12 @@
         "lessons/getting-started.md",
         "lessons/micro-led.md",
         "lessons/rock-paper-scissors.md",
+        "lessons/pedestrian-traffic-light.md",
+        "lessons/smart-doorbell.md",
+        "lessons/smart-bus-counter.md",
+        "lessons/debug-challenge-1.md",
+        "lessons/debug-challenge-2.md",
+        "lessons/debug-challenge-3.md",
         "lessons/main.blocks"
     ],
     "testFiles": [
