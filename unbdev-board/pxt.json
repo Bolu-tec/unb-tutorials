@@ -11,9 +11,11 @@
         "main.ts",
         "microphone-validation.md",
         "motor-validation.md",
+        "wifi-mqtt-validation.md",
         "lessons/blixel.md",
         "lessons/microphone.md",
         "lessons/motor-control.md",
+        "lessons/wifi-mqtt.md",
         "static/motors.svg",
         "lessons/main.py"
     ],

@@ -32,6 +32,14 @@ Instructor previews of activities using the integrated board. Physical validatio
     "imageUrl": "/unb-tutorials/unbdev-board/static/motors.svg",
     "label": "Hardware unverified",
     "labelClass": "orange ribbon"
+  },
+  {
+    "name": "Wi-Fi and MQTT (instructor preview)",
+    "description": "Join an approved lab network, exchange text and numbers through an MQTT broker, then disconnect and recover. Hardware and ESP32 compatibility remain unverified.",
+    "url": "/unb-tutorials/unbdev-board/lessons/wifi-mqtt",
+    "cardType": "tutorial",
+    "label": "Hardware unverified",
+    "labelClass": "orange ribbon"
   }
 ]
 ```
