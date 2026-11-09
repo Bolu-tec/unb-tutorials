@@ -37,10 +37,10 @@ input.onButtonPressed(Button.A, function () {
 
 Before the countdown, the lights should start **off** and at a **safe brightness**.
 
-Open **UNBdev.board → BLiXel** and drag these two blocks **inside** **on button A pressed**:
+Open ``||UNBDev:UNBdev.board||`` → **BLiXel** and drag these two blocks **inside** **on button A pressed**:
 
-1. **set UNBdev.board BLiXel brightness to 20%**
-2. **set all UNBdev.board BLiXels to** **black**
+1. ``||UNBDev:set UNBdev.board BLiXel brightness to 20%||``
+2. ``||UNBDev:set all UNBdev.board BLiXels to black||``
 
 **Why?** 20% is bright enough to see and is the safe level for this activity. **Black** means off, so this turns off any lights left over from the last round. To set the colour, drop the named colour block onto the circle and choose **black**.
 
@@ -55,7 +55,7 @@ input.onButtonPressed(Button.A, function () {
 
 Now light up the first BLiXel to count **1**.
 
-1. From **UNBdev.board → BLiXel**, drag **set UNBdev.board BLiXel 1 to** and place it under **set all UNBdev.board BLiXels to** **black**. Leave the dropdown on **1**.
+1. From ``||UNBDev:UNBdev.board||`` → **BLiXel**, drag ``||UNBDev:set UNBdev.board BLiXel 1 to||`` and place it under ``||UNBDev:set all UNBdev.board BLiXels to black||``. Leave the dropdown on **1**.
 2. The block has a **red circle** at the end: that's where its colour goes. From the same drawer, drag the named colour block and drop it **onto the red circle**, then choose **blue** in its dropdown.
 3. From ``||basic:Basic||``, add ``||basic:pause (ms) 500||`` underneath.
 
@@ -74,7 +74,7 @@ input.onButtonPressed(Button.A, function () {
 
 Repeat Step 3 two more times so the board counts **1–2–3**.
 
-**Tip:** Right-click the **set UNBdev.board BLiXel 1 to** block and choose **Duplicate** to make a copy (the blue colour comes with it). Do the same for the pause.
+**Tip:** Right-click the ``||UNBDev:set UNBdev.board BLiXel 1 to||`` block and choose **Duplicate** to make a copy (the blue colour comes with it). Do the same for the pause.
 
 - On the second copy, click the **1 ▾** dropdown and change it to **2**. Follow it with a pause of **500 ms**.
 - On the third copy, change the dropdown to **3**. Follow it with a pause of **500 ms**.
@@ -239,7 +239,7 @@ input.onButtonPressed(Button.A, function () {
 
 Finally, turn off the countdown lights so the board is ready for the next round.
 
-From **UNBdev.board → BLiXel**, drag **set all UNBdev.board BLiXels to** **black** to the very **bottom** of **on button A pressed**, **below** the whole if block (not inside it).
+From ``||UNBDev:UNBdev.board||`` → **BLiXel**, drag ``||UNBDev:set all UNBdev.board BLiXels to black||`` to the very **bottom** of **on button A pressed**, **below** the whole if block (not inside it).
 
 ```blocks
 let choice = 0

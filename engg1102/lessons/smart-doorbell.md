@@ -20,7 +20,7 @@ When a visitor presses the bell, your device will:
 ## How to use this tutorial @showdialog
 
 - Blocks are grouped by colour into **drawers** in the toolbox, such as **Input**, **Music**, and **Loops**. Click a drawer to open it.
-- The BLiXel blocks are in **UNBdev.board → BLiXel**.
+- The BLiXel blocks are in ``||UNBDev:UNBdev.board||`` → **BLiXel**.
 - ⚠️ **The A and B labels on the board are swapped.** The button your code calls **A** is the one printed **B** on the board.
 - Stuck? Ask your instructor or TA.
 - Click **Next** when you finish a step.
@@ -29,7 +29,7 @@ When a visitor presses the bell, your device will:
 
 While nobody is at the door, the doorbell should be quiet and dark, with one small sign that it's switched on.
 
-1. From **UNBdev.board → BLiXel**, drag **set UNBdev.board BLiXel brightness to 20%** and **set all UNBdev.board BLiXels to** **black** into ``||basic:on start||``.
+1. From ``||UNBDev:UNBdev.board||`` → **BLiXel**, drag ``||UNBDev:set UNBdev.board BLiXel brightness to 20%||`` and ``||UNBDev:set all UNBdev.board BLiXels to black||`` into ``||basic:on start||``.
 2. From ``||basic:Basic||``, add ``||basic:show icon||`` and choose the **small diamond**. That's our "ready" sign.
 
 **Black** means off. To set the colour, drop the named colour block onto the circle and choose **black**.
@@ -47,7 +47,7 @@ The visitor should know **right away** that the bell worked. The first thing ins
 Inside **on button A pressed**, add:
 
 1. ``||basic:show icon||`` with the **house**.
-2. **set all UNBdev.board BLiXels to** with the colour **blue**.
+2. ``||UNBDev:set all UNBdev.board BLiXels to blue||``.
 
 **Why first?** Code runs from top to bottom. Putting the feedback first means the visitor sees it before anything else happens.
 
@@ -68,9 +68,9 @@ A flashing light gets attention even if the sound is missed. Let's flash the BLi
 
 1. From ``||loops:Loops||``, drag ``||loops:repeat 4 times||`` under the second tone. Change **4** to **3**.
 2. Inside the repeat, add:
-   - **set all UNBdev.board BLiXels to** **black**
+   - ``||UNBDev:set all UNBdev.board BLiXels to black||``
    - ``||basic:pause (ms) 200||``
-   - **set all UNBdev.board BLiXels to** **blue**
+   - ``||UNBDev:set all UNBdev.board BLiXels to blue||``
    - ``||basic:pause (ms) 200||``
 
 ## Step 6: Return to normal
@@ -79,7 +79,7 @@ After the alert, the doorbell must go back to its **normal state** so it's ready
 
 At the very bottom of **on button A pressed**, **below** the repeat loop (not inside it), add:
 
-1. **set all UNBdev.board BLiXels to** **black**
+1. ``||UNBDev:set all UNBdev.board BLiXels to black||``
 2. ``||basic:show icon||`` with the **small diamond**
 
 These are the same blocks you used for the normal state in Step 1.

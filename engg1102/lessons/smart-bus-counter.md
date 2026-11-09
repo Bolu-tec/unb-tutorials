@@ -288,9 +288,9 @@ When the 5th passenger gets on, the bus is **full**: close the door and turn the
 3. Make the **left** one read **passengers ≥ 5**. Click **<** to choose **≥**.
 4. Make the **right** one read **doorOpen = 1**.
 5. Inside this **if**, add these in order:
-   - A ``||variables:set||`` block: **set passengers to 5**
+   - ``||variables:set passengers to 5||``
    - From ``||pins:Pins||``, ``||pins:servo write pin P1 to 0||`` (door **closed**)
-   - A ``||variables:set||`` block: **set doorOpen to 0**
+   - ``||variables:set doorOpen to 0||``
    - From ``||pins:Pins||``, ``||pins:digital write pin P0 to 1||`` (LED **on**)
 6. Below this **if**, at the very bottom of **forever**, add ``||basic:pause (ms) 50||`` from ``||basic:Basic||``. This gives the sensor a short rest between pulses.
 
@@ -345,7 +345,7 @@ Passengers need to get off too. A **tap** of button A will let **one** person of
 4. Into the **left** side of **and**, drag ``||input:button A is pressed||`` from ``||input:Input||``.
 5. Into the **right** side, drag a ``||logic:0 = 0||`` block. Make it read **buttonWasDown = 0**.
 6. Inside this **if**, add:
-   - A ``||variables:set||`` block: **set buttonWasDown to 1**
+   - ``||variables:set buttonWasDown to 1||``
    - A ``||variables:set||`` block for **buttonStart**. From ``||input:Input||``, under **more**, drag ``||input:running time (ms)||`` onto its **0**.
 
 **Why buttonWasDown?** It's the same trick as **personAtDoor**: we only want to react when the button **first** goes down, not on every loop while it's held.
@@ -406,7 +406,7 @@ When the button comes back **up**, we can work out how long it was held.
 3. Drag ``||logic:and||`` onto its **true**.
 4. Into the **left** side of **and**, drag ``||logic:not||`` from ``||logic:Logic||``. Then drag ``||input:button A is pressed||`` into **not**.
 5. Into the **right** side, drag a ``||logic:0 = 0||`` block. Make it read **buttonWasDown = 1**.
-6. Inside this **if**, add **set buttonWasDown to 0**.
+6. Inside this **if**, add ``||variables:set buttonWasDown to 0||``.
 7. Under it, add a ``||variables:set||`` block for **heldFor**. From ``||math:Math||``, drag ``||math:0 - 0||`` onto its **0**. Put ``||input:running time (ms)||`` on the left and ``||variables:buttonStart||`` on the right.
 
 We'll call this the **button released** if.
@@ -468,7 +468,7 @@ basic.forever(function () {
 Still inside the **button released** if, under **set heldFor**:
 
 1. Add a ``||logic:if then else||``. Drag a comparison onto its **true** and make it read **heldFor ≥ 1000** (1000 ms is 1 second).
-2. In the **if** part (a hold), add **set passengers to 0**.
+2. In the **if** part (a hold), add ``||variables:set passengers to 0||``.
 3. In the **else** part (a tap), add a new ``||logic:if then||`` and make its check read **passengers > 0**.
 4. Inside that **if**, add ``||variables:change passengers by 1||``, choose **passengers**, and type **-1**.
 
@@ -542,7 +542,7 @@ Still inside the **button released** if, **below** the tap or hold if/else (not 
 1. Add a new ``||logic:if then||`` and make its check read **passengers < 5**.
 2. Inside it, add these in order:
    - ``||pins:servo write pin P1 to 90||`` (door **open**)
-   - **set doorOpen to 1**
+   - ``||variables:set doorOpen to 1||``
    - ``||pins:digital write pin P0 to 0||`` (LED **off**)
 3. **Below** that if, add ``||basic:clear screen||`` (under **more** in ``||basic:Basic||``).
 4. Under it, add ``||basic:show number||``, and drag ``||variables:passengers||`` onto its **0**.
