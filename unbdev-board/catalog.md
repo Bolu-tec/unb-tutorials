@@ -38,6 +38,7 @@ Instructor previews of activities using the integrated board. Physical validatio
     "description": "Join an approved lab network, exchange text and numbers through an MQTT broker, then disconnect and recover. Hardware and ESP32 compatibility remain unverified.",
     "url": "/unb-tutorials/unbdev-board/lessons/wifi-mqtt",
     "cardType": "tutorial",
+    "imageUrl": "/unb-tutorials/unbdev-board/static/wifi.svg",
     "label": "Hardware unverified",
     "labelClass": "orange ribbon"
   }

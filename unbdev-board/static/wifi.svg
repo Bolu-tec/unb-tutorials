@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">UNBdev.board Wi-Fi and MQTT preview</title>
+  <desc id="desc">A Wi-Fi signal with a network node and the caption Wi-Fi and MQTT, marked instructor preview.</desc>
+  <rect width="640" height="360" rx="28" fill="#f4f2f7"/>
+  <rect x="34" y="38" width="572" height="284" rx="24" fill="#fff" stroke="#d9d3e2" stroke-width="4"/>
+  <g fill="none" stroke="#6941a5" stroke-linecap="round">
+    <path d="M200 216a120 120 0 0 1 240 0" stroke-width="20"/>
+    <path d="M240 244a80 80 0 0 1 160 0" stroke-width="16"/>
+  </g>
+  <circle cx="320" cy="272" r="18" fill="#6941a5"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="320" y="120" font-size="30" font-weight="700" fill="#3d2a56">WI-FI + MQTT</text>
+    <text x="320" y="306" font-size="16" font-weight="700" fill="#8a4b00">INSTRUCTOR PREVIEW · HARDWARE UNVERIFIED</text>
+  </g>
+</svg>
