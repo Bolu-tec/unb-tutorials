@@ -8,7 +8,7 @@ Content is delivered independently of editor releases. Merging a lesson or catal
 
 | Collection | Folder | Contents | Publication status |
 | --- | --- | --- | --- |
-| UNBDev Board Guide | [`unbdev-board/`](unbdev-board/README.md) | BLiXel light patterns, microphone, and motor control lessons for the integrated UNBdev.board | Instructor previews. BLiXel hardware test pending; microphone and motors hardware unverified. Motor operation is software-only and not authorized. |
+| UNBDev Board Guide | [`unbdev-board/`](unbdev-board/README.md) | BLiXel light patterns, microphone, motor control, and Wi-Fi/MQTT lessons for the integrated UNBdev.board | Instructor previews. BLiXel hardware test pending; microphone, motors, and Wi-Fi/MQTT hardware unverified. Motor operation is software-only and not authorized. |
 | ENGG 1102 | [`engg1102/`](engg1102/README.md) | Introductory "Getting started" and micro LED lessons | Instructor previews. Course-instructor approval pending. |
 
 Both collections are early-stage authoring material, not certified student lessons. Each card carries a label describing its validation state; keep that label until the stated review is complete. See each collection's `README.md` for its specific evidence and open issues.
