@@ -2,6 +2,8 @@
 
 ## Meet the network @showdialog
 
+``||UNBDev:UNBdev.board connect to Wi-Fi||`` ``||UNBDev:UNBdev.board MQTT connect to server||``
+
 Connect the integrated UNBdev.board to an approved lab Wi-Fi network, then exchange short text and number messages through an MQTT broker. A **broker** receives messages published to a named **topic** and forwards them to subscribers of that topic.
 
 This is an **instructor preview: hardware and ESP32 firmware compatibility are unverified**. You need an integrated UNBdev.board with a micro:bit V2, a data-capable USB cable, and an instructor-approved power setup. Leave motors and optional modules disconnected. Do not change powered wiring; disconnect power if the board becomes hot.
@@ -11,6 +13,8 @@ Your instructor must provide a compatible lab SSID/password, a reachable lab bro
 The placeholders in this lesson are not working credentials. Real credentials entered into a project remain in its source and downloaded program. Never publish, commit, share or screenshot a project containing them. Use temporary lab credentials and replace them with placeholders before sharing.
 
 ## Find the blocks and firmware
+
+``||UNBDev:UNBdev.board Wi-Fi firmware version||`` ``||basic:on start||`` ``||basic:show string||`` ``||UNBDev:UNBdev.board Wi-Fi last error||``
 
 Open **UNBDev / WiFi**; diagnostic blocks may be under its advanced or **More** section. Use the UNBdev.board blocks rather than another Wi-Fi extension. Add **Wi-Fi firmware version** inside **show string** in **on start**. Download the program to the integrated micro:bit using the editor's Download instructions. Record the scrolling ESP32 AT firmware identification with your instructor. It is different from the board controller firmware version.
 
@@ -28,6 +32,8 @@ if (firmware != "") {
 An empty string means the query failed; record the error before calling another network block. The simulator cannot identify the real ESP32. A blank result or simulator display is not firmware evidence. Stop the hardware activity if firmware compatibility has not been approved.
 
 ## Join the lab Wi-Fi
+
+``||UNBDev:UNBdev.board connect to Wi-Fi||`` ``||UNBDev:UNBDev.board Wi-Fi is connected||`` ``||UNBDev:UNBdev.board Wi-Fi last error||`` ``||basic:show icon||``
 
 Replace the previous program with this example. In your private lab copy only, replace `LAB_SSID` and `LAB_PASSWORD` with the values supplied by the instructor. Neither may be empty or contain a line break, double quote or backslash. Open networks with empty passwords and captive-portal or enterprise sign-in flows are not supported by this activity.
 
@@ -53,6 +59,8 @@ A command can wait up to 30 seconds, and joining uses several commands. Wait for
 
 ## Connect to the broker
 
+``||UNBDev:UNBdev.board MQTT connect to server||`` ``||UNBDev:UNBdev.board Wi-Fi last error||``
+
 Replace the previous program with this version. Replace `BROKER_HOST` with the instructor's hostname or IP address only: do not include `mqtt://`, a path or `:1883`. Confirm the broker is reachable from the board's network; `localhost` would refer to the board's network endpoint, not your laptop.
 
 **MQTT connect to server** requests an anonymous clean session. A tick is expected after the extension receives a successful broker connection acknowledgement. If your broker requires TLS or credentials, stop and ask the instructor for a compatible lab setup.
@@ -74,6 +82,8 @@ if (UNBdevBoardWiFi.connectWiFi("LAB_SSID", "LAB_PASSWORD")) {
 ```
 
 ## Publish and receive two kinds of message
+
+``||UNBDev:on UNBdev.board MQTT [text] received [value] from topic [unb/lab/team01/text]||`` ``||UNBDev:UNBdev.board MQTT publish||`` ``||input:on button A pressed||`` ``||input:on button B pressed||``
 
 Replace the previous program with the complete example below. Keep the network placeholders private as before. Replace **every** `team01` with the unique team name agreed with your instructor, including in the external MQTT client. Use short ASCII names and messages. Another team must not use your topics.
 
@@ -131,6 +141,8 @@ Next, have the external client publish `reply` on the text topic and `42` on the
 
 ## Disconnect deliberately
 
+``||input:on button A+B pressed||`` ``||UNBDev:UNBdev.board disconnect Wi-Fi||`` ``||UNBDev:UNBDev.board Wi-Fi is connected||``
+
 Save the exchange program privately. Add this **A+B pressed** handler to it. Briefly press and release A+B together after messages have finished. It first disables the program's send buttons, then requests Wi-Fi disconnection. `STOP` is expected only if that command returns true. Query **Wi-Fi is connected** afterward to check the result; a cross is expected on a successfully disconnected board.
 
 ```blocks
@@ -162,6 +174,8 @@ Here error **3** means **NotConnected** at the pinned extension revision; other 
 
 ## Restart and recover
 
+``||UNBDev:UNBdev.board restart Wi-Fi||`` ``||UNBDev:UNBdev.board Wi-Fi firmware version||``
+
 Save the stopped version. **Replace the entire program**, including all receive and button handlers, with this diagnostic program. **Restart Wi-Fi** requests an ESP32 restart; it does not factory-reset the module or erase saved credentials. `RESTART` means the command returned successfully, not that Wi-Fi or MQTT has reconnected.
 
 ```blocks
@@ -185,6 +199,8 @@ if (UNBdevBoardWiFi.restart()) {
 To resume, reload the saved exchange program and deliberately connect again. Repeat the external-client checks for both topics. Successful recovery must be observed on the board and broker; simulator behavior is insufficient.
 
 ## Explain your results and finish @showdialog
+
+``||UNBDev:UNBdev.board Wi-Fi last error||`` ``||UNBDev:UNBdev.board restart Wi-Fi||``
 
 You used all nine public Wi-Fi/MQTT blocks: firmware version, connect Wi-Fi, connection status, connect MQTT, publish, message received, last error, disconnect and restart. Explain why Wi-Fi status, broker connection and observed message delivery are three different checks.
 
