@@ -12,7 +12,7 @@ The simulator does not supply the integrated board microphone signal. Compiling 
 
 ## Read a level
 
-In **on start**, set a variable named **level** to **UNBdev.board sound level**. Add the microphone block with **enabled**, then show **level** on the micro:bit display. The first sound-level read initializes the microphone; explicit enable also restores the remembered threshold and refreshes its baseline. The number is a relative controller RMS reading, **not decibels**. No exact number is guaranteed.
+In ``||basic:on start||``, set a variable named **level** to ``||UNBDev:UNBdev.board sound level||``. Add the microphone block with ``||UNBDev:UNBdev.board microphone enabled||``, then show **level** with ``||basic:show number level||`` on the micro:bit display. The first sound-level read initializes the microphone; explicit enable also restores the remembered threshold and refreshes its baseline. The number is a relative controller RMS reading, **not decibels**. No exact number is guaranteed.
 
 ```blocks
 let level = UNBdevBoardMic.soundLevel()
@@ -22,7 +22,7 @@ basic.showNumber(level)
 
 ## Watch changing sound
 
-Add a **forever** loop to read **level**, show the number and pause **500 ms**. On real hardware, compare quiet surroundings with normal speech. Record what actually happens instead of expecting a fixed value. In the simulator, integrated microphone readings are unavailable; a displayed zero does not prove silence on a real board.
+Add a ``||basic:forever||`` loop to read **level**, then ``||basic:show number level||`` and ``||basic:pause 500 ms||``. On real hardware, compare quiet surroundings with normal speech. Record what actually happens instead of expecting a fixed value. In the simulator, integrated microphone readings are unavailable; a displayed zero does not prove silence on a real board.
 
 ```blocks
 let level = UNBdevBoardMic.soundLevel()
@@ -37,7 +37,7 @@ basic.forever(function () {
 
 ## Refresh the baseline quietly
 
-Add **on button A pressed** and **update UNBdev.board microphone baseline** inside it. Let the surroundings become quiet, then briefly press and release logical A. This asks the controller to recalculate its ambient reference; the firmware calibration duration and acoustic behavior are not established here. On older boards printed A/B labels may be reversed: confirm logical buttons with your instructor.
+Add ``||input:on button A pressed||`` and ``||UNBDev:update UNBdev.board microphone baseline||`` inside it. Let the surroundings become quiet, then briefly press and release logical A. This asks the controller to recalculate its ambient reference; the firmware calibration duration and acoustic behavior are not established here. On older boards printed A/B labels may be reversed: confirm logical buttons with your instructor.
 
 ```blocks
 let level = UNBdevBoardMic.soundLevel()
@@ -55,7 +55,7 @@ basic.forever(function () {
 
 ## Choose a threshold
 
-In **on start**, after enable, add **set UNBdev.board sound threshold to 50**. This is a starting value to adjust with your instructor, not a universal loudness boundary. Valid values are **1–65535**; the API rounds and constrains them. Keep your quiet/louder observations for comparison. Changing the threshold is different from reading a sound level.
+In ``||basic:on start||``, after enable, add ``||UNBDev:set UNBdev.board sound threshold to 50||``. This is a starting value to adjust with your instructor, not a universal loudness boundary. Valid values are **1–65535**; the API rounds and constrains them. Keep your quiet/louder observations for comparison. Changing the threshold is different from reading a sound level.
 
 ```blocks
 let level = UNBdevBoardMic.soundLevel()
@@ -74,7 +74,7 @@ basic.forever(function () {
 
 ## Ask whether the threshold was reached
 
-Save a copy of your level-reading program first. **Replace the entire forever loop** with the loop below. The question block reads the controller threshold flag: a reply of 1 is true. A tick is expected when the flag is set; a cross means it was not set when read. Firmware/hardware observations remain unverified. Do not add the loud-sound event yet: it uses and clears the same flag.
+Save a copy of your level-reading program first. Replace the entire ``||basic:forever||`` loop with the loop below. The ``||UNBDev:has UNBdev.board sound threshold been reached?||`` block reads the controller threshold flag: a reply of 1 is true. A tick is expected when the flag is set; a cross means it was not set when read. Firmware/hardware observations remain unverified. Do not add the loud-sound event yet: it uses and clears the same flag.
 
 ```blocks
 let level = UNBdevBoardMic.soundLevel()
@@ -96,7 +96,7 @@ basic.forever(function () {
 
 ## Acknowledge the flag
 
-Inside the true branch, after showing the tick, pause **500 ms**, then **clear UNBdev.board sound threshold flag**. In quiet conditions the next read is expected to be false; continuing sound can immediately set it again. A repeated tick alone does not prove clear failed. Keep the brief display so you can see the indication. Save this polling version separately before the next step.
+Inside the true branch, after showing the tick, pause ``||basic:pause 500 ms||``, then ``||UNBDev:clear UNBdev.board sound threshold flag||``. In quiet conditions the next read is expected to be false; continuing sound can immediately set it again. A repeated tick alone does not prove clear failed. Keep the brief display so you can see the indication. Save this polling version separately before the next step.
 
 ```blocks
 let level = UNBdevBoardMic.soundLevel()
@@ -120,7 +120,7 @@ basic.forever(function () {
 
 ## Use an event instead of polling
 
-**Delete the entire forever loop before adding this event.** Keep on start and button A. Add **on UNBdev.board loud sound** with a tick, a **200 ms** pause and **clear screen**. The event wrapper clears the threshold flag when registered and again after the handler finishes; no competing polling/reset loop is needed. One clap is not guaranteed to produce exactly one event. On the simulator, integrated microphone events are not supplied.
+Delete the entire ``||basic:forever||`` loop before adding this event. Keep ``||basic:on start||`` and ``||input:on button A pressed||``. Add ``||UNBDev:on UNBdev.board loud sound||`` with ``||basic:show icon||``, a ``||basic:pause 200 ms||`` and ``||basic:clear screen||``. The event wrapper clears the threshold flag when registered and again after the handler finishes; no competing polling/reset loop is needed. One clap is not guaranteed to produce exactly one event. On the simulator, integrated microphone events are not supplied.
 
 ```blocks
 let level = UNBdevBoardMic.soundLevel()
@@ -139,7 +139,7 @@ UNBdevBoardMic.onLoudSound(function () {
 
 ## Finish with the microphone disabled
 
-Add **on button B pressed**, set the microphone to **disabled**, then show **STOP**. Briefly press and release logical B on the board to request disable. This program already performed its first sound-level read during startup. Do not add further sound-level reads or new event registration after stopping: a first lazy initialization can otherwise enable the microphone. Reset/restart the program to try again. Disable behavior must be confirmed externally; the simulator only checks supported program flow.
+Add ``||input:on button B pressed||``, set the microphone to ``||UNBDev:UNBdev.board microphone disabled||``, then show **STOP** with ``||basic:show string STOP||``. Briefly press and release logical B on the board to request disable. This program already performed its first sound-level read during startup. Do not add further sound-level reads or new event registration after stopping: a first lazy initialization can otherwise enable the microphone. Reset/restart the program to try again. Disable behavior must be confirmed externally; the simulator only checks supported program flow.
 
 ```blocks
 let level = UNBdevBoardMic.soundLevel()

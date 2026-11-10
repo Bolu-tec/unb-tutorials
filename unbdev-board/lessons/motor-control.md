@@ -30,7 +30,7 @@ basic.pause(500)
 UNBdevMotor.stopAll()
 ```
 
-The extension also has an explicit direction block. Compare it with the signed-speed version; both examples request a direction and magnitude. A plain `run` command continues until another command changes that channel.
+The extension also has an explicit direction block. Compare it with the signed-speed version; both examples request a direction and magnitude. A plain ``||UNBDev:run left motor forward at 25%||`` command continues until another command changes that channel.
 
 ```blocks
 UNBdevMotor.enable(UNBdevMotor.State.Enabled)
@@ -42,7 +42,7 @@ UNBdevMotor.runFor(UNBdevMotor.Motor.Right, -25, 300)
 
 ## Use a timed command
 
-`setBothSpeeds` requests the same signed speed on both channels until changed. `runBothFor` requests that speed for the requested duration, then calls the stop-all block. The duration is in milliseconds. These API behaviors are visible in the code, but they are not a physical safety certification; keep this example disconnected from motors.
+``||UNBDev:set both motor speeds to 25%||`` requests the same signed speed on both channels until changed. ``||UNBDev:run both motors at 25% for 500 ms||`` requests that speed for the requested duration, then calls the ``||UNBDev:stop all motors||`` block. The duration is in milliseconds. These API behaviors are visible in the code, but they are not a physical safety certification; keep this example disconnected from motors.
 
 ```blocks
 UNBdevMotor.enable(UNBdevMotor.State.Enabled)
@@ -51,7 +51,7 @@ basic.pause(300)
 UNBdevMotor.runBothFor(25, 500)
 ```
 
-The extension also provides `runFor` for one channel. Both timed blocks stop their requested motor output when the call completes. A timeout is not a substitute for an emergency stop or verified hardware fault handling.
+The extension also provides ``||UNBDev:run left motor at 25% for 300 ms||`` for one channel. Both timed blocks stop their requested motor output when the call completes. A timeout is not a substitute for an emergency stop or verified hardware fault handling.
 
 ## Practice an in-place turn
 
@@ -69,7 +69,7 @@ Actual turning direction depends on installation, wiring, and motor orientation,
 
 ## Distinguish stopping from disabling
 
-`stopAll()` requests a brake for both channels. `enable(Disabled)` requests that the motor driver be disabled. These are separate commands. Review the order below; do not interpret the snippet as a tested shutdown sequence for an assembled vehicle.
+``||UNBDev:stop all motors||`` requests a brake for both channels. ``||UNBDev:motor driver disabled||`` requests that the motor driver be disabled. These are separate commands. Review the order below; do not interpret the snippet as a tested shutdown sequence for an assembled vehicle.
 
 ```blocks
 UNBdevMotor.stopAll()
@@ -78,7 +78,7 @@ UNBdevMotor.enable(UNBdevMotor.State.Disabled)
 
 ## Check your understanding @showdialog
 
-Explain what positive, negative, and zero signed speeds request; how `runBothFor` differs from `setBothSpeeds`; and how `stopAll` differs from disabling the driver. Keep the motors disconnected. The code preview checks that the extension API can be referenced; it does not test the motor driver, power, wiring, direction, braking, or safe operation.
+Explain what positive, negative, and zero signed speeds request; how ``||UNBDev:run both motors at 25% for 500 ms||`` differs from ``||UNBDev:set both motor speeds to 25%||``; and how ``||UNBDev:stop all motors||`` differs from disabling the driver. Keep the motors disconnected. The code preview checks that the extension API can be referenced; it does not test the motor driver, power, wiring, direction, braking, or safe operation.
 
 If an instructor later authorizes physical testing, use a separate reviewed procedure for the exact board and power setup. Record board revision, controller firmware, extension commit, motor and supply specifications, wiring, expected behavior, actual behavior, and how the system was stopped. Stop and disconnect power if anything overheats or behaves unexpectedly.
 

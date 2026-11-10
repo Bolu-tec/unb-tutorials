@@ -2,6 +2,21 @@
 
 This guide provides end-to-end instructions for course instructors, instructional designers, and junior developers creating and publishing interactive tutorials in the UNB IDE.
 
+## Why this guide exists
+
+The UNB IDE reads its lessons and home-page cards from this repository at runtime. Merging content to `main` publishes it to students directly: there is no editor rebuild between the merge and the live IDE, and no staging copy to catch a mistake first. That makes authoring fast, but it also means a collection that does not import, a manifest that omits a lesson, or a card that points at the wrong file is visible in the editor immediately after publication. This guide makes that path repeatable, so instructors, instructional designers, and developers produce a lesson that imports, previews, and validates the same way every time.
+
+## The tutorial development flow
+
+A lesson moves through six stages:
+
+1. **Design the collection.** Lay out the course as an extension: `pxt.json`, `main.ts`, `test.ts`, `catalog.md`, `README.md`, `lessons/`, and `static/`.
+2. **Author the lessons.** Write each lesson as Markdown in `lessons/`, with any images or other media in `static/`.
+3. **Register the content.** List every lesson in `catalog.md` and in the manifest's `files` array, so both the home page and the import see it.
+4. **Preview and validate.** Import the collection into the IDE and follow the lesson as a student would, then run `node scripts/validate.mjs`.
+5. **Propose publication.** Open a pull request; the `validate` check applies the content contract and a reviewer checks the preview.
+6. **Publish and verify.** The merge to `main` publishes the card and lesson. Confirm the home-page card opens the lesson, then sync your fork and delete the topic branch.
+
 Every course collection in the UNB IDE repository is structured as a **MakeCode extension**, with tutorials authored as Markdown files within a dedicated `lessons/` folder.
 
 ---
