@@ -11,8 +11,6 @@
         "README.md",
         "catalog.md",
         "main.ts",
-        "lessons/getting-started.md",
-        "lessons/micro-led.md",
         "lessons/rock-paper-scissors.md",
         "lessons/pedestrian-traffic-light.md",
         "lessons/smart-doorbell.md",
